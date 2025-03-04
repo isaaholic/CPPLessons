@@ -356,6 +356,7 @@ int main() {
 
 	Point p(10, 20);
 	p.print();
+	p.print();
 	p.setX(20);
 	p.setY(300);
 	p.print();
