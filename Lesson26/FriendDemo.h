@@ -37,7 +37,12 @@ void changePoint(Point& p)
 	p._x = 100;
 	p._y = 200;
 }
-
+//
+//void chaneNoFriendPoint(Point& p)
+//{
+//	p._x = 100;
+//	p._y = 200;
+//}
 
 
 
@@ -66,9 +71,10 @@ private:
 public:
 	int publicField = 0;
 
-	void publicMethod() const
+	void publicMethod(/*B& object*/) const
 	{
 		cout << "publicMethod\n";
+		//cout << object.number << endl; without A friend
 	};
 
 	void print() const

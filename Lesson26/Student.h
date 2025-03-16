@@ -23,7 +23,7 @@ public:
 	string getName() const { return _name; }
 
 
-	friend ostream& operator<<(ostream& output, const Student& s);
+	//friend ostream& operator<<(ostream& output, const Student& s);
 	friend istream& operator>>(istream& input, Student& s);
 };
 
@@ -31,11 +31,11 @@ public:
 
 // Without friend
 
-//ostream& operator<<(ostream& output, const Student& s)
-//{
-//	output << "\nName: " << s.getName() << endl;
-//	return output;
-//}
+ostream& operator<<(ostream& output, const Student& s)
+{
+	output << "\nName: " << s.getName() << endl;
+	return output;
+}
 
 
 

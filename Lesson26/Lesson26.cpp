@@ -8,5 +8,6 @@ using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Student* s = new Student("Gulkin","Hebibillayeva",22,11.2);
+	//cout << *s << endl;
 }
