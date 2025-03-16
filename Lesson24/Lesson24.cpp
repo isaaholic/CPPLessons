@@ -1,116 +1,243 @@
 #include <iostream>
-
+#include <string>
 
 using namespace std;
 
 
-class Test {
-public:
-	int* _number = nullptr;
-
-	Test()
-	{
-		cout << "Default constructor\n";
-	}
-
-	Test(int number)
-	{
-		cout << "Constructor with Param\n";
-		_number = new int(number);
-	}
-
-
-	Test(const Test& other) {
-
-		cout << "Copy constructor\n";
-
-		if (other._number)
-			_number = new int(*other._number);
-	}
-
-
-	Test& operator=(const Test& other) {
-		cout << "Copy Assigment operator\n";
-
-		if (_number != nullptr)
-			delete _number;
-
-		_number = new int(*other._number);
-
-		return  *this;
-	}
-
-
-
-	Test(Test&& other) noexcept {
-		cout << "Move constructor\n";
-
-		_number = other._number;
-		other._number = nullptr;
-	}
-
-
-	Test& operator=(Test&& other) noexcept {
-		cout << "Move Assigment operator\n";
-
-		if (_number != nullptr)
-			delete _number;
-
-		_number = other._number;
-		other._number = nullptr;
-
-		return  *this;
-	}
-
-
-	~Test()
-	{
-		cout << "Destructor for -> " << _number << endl;
-		delete _number;
-	}
-};
-
-
-
-
-
-Test foo()
-{
-	cout << "\nFunction\n";
-	Test t1(10);
-	cout << t1._number << endl;
-	return t1;
-}
-
-
 int main()
 {
-	// Test t2 = foo();
-
-
-	//// Move Constructor
-	// Test t2(11);
-	// Test t3 = move(t2);
-
-
-	//// Move Assignment Operator
-
-	// Test t4(12);
-	// Test t5;
+	//string text = "Huseyn";
 	// 
-	// t5 = move(t4);
+	//cout << text << endl;
+	//cout << text.size() << endl;    // same 
+	//cout << text.length() << endl;  // same 
+	//cout << text.max_size() << endl;
+	//cout << text.capacity() << endl;
 
 
 
 
 
 
-	Test* oldArray = new Test[3]{ Test(10), Test(11), Test(12) };
-	Test* newArray = new Test[4];
 
-	for (size_t i = 0; i < 3; i++)
-		newArray[i] = move(oldArray[i]);
+	///////////////////////////
+	//// string methods
 
 
+
+
+	//// capacity, reserve, resize, shrink_to_fit
+
+	//string str(50, '*');
+	//cout << str << endl;
+	//// 
+	//cout << "1) Capacity: " << str.capacity() << endl;
+	////  
+	//str.resize(13);
+	//// 
+	//cout << str << endl;
+	//cout << "2) Capacity: " << str.capacity() << endl;
+	////  
+	//str.shrink_to_fit();
+	//// 
+	//cout << str << endl;
+	//cout << "3) Capacity: " << str.capacity() << endl;
+	//// 
+	//str.reserve(31);
+	//// 
+	//cout << str << endl;
+	//cout << "4) Capacity: " << str.capacity() << endl;
+
+
+
+
+
+
+
+	//// clear, empty
+
+	//string text = "Happy Programmers Day!";
+	//cout << text << endl;
+
+	//text.clear();
+	//cout << "After clear" << endl;
+	//// 
+	//if (text.empty())
+	//	cout << "No data" << endl;
+	//else
+	//	cout << text << endl;
+	//// 
+	//cout << text.capacity() << endl;
+	//// 
+	//text.shrink_to_fit();
+	//cout << text.capacity() << endl;
+
+
+
+
+
+
+
+	// string operator +=, +,  =, ==, []
+	// at method
+
+	//string text = "Hello";
+	//text += " Tural";
+	//text = text + " bey";
+	//cout << text << endl;
+
+
+
+	//string text1 = "Hello";
+	//string text2 = text1;
+
+	//text1 += ' ';
+	//text1 += "World";
+
+	//cout << text1 << endl;
+	//cout << text2 << endl;
+
+
+
+
+
+	//string text1 = "armu";
+	//string text2 = "alma";
+	//cout << (text1 == text2) << endl;
+	//cout << text1.compare(text2) << endl;
+
+
+
+
+
+
+
+
+	//string text = "Happy Programmers Day!";
+
+	//for (size_t i = 0; i < text.size(); i++)
+	//{
+	//	 cout << text[i] << endl;
+	//	 cout << text.at(i) << endl;
+	//}
+
+
+
+
+
+
+	//string text = "Happy Programmers Day!";
+	//text[0] = 'Y';
+	//cout << text << endl;
+
+	//cout << text.front() << endl;
+	//text.front() = 'H';
+	//cout << text << endl;
+
+	//cout << text.back() << endl;
+
+	//text.insert(text.begin() + 1, 'Z');
+	//text.insert(10, "Begin");
+	//cout << text << endl;
+
+
+
+
+	//text.replace(1, 2, "Max");
+	//cout << text << endl;
+
+	//text.append("Hakuna");
+	//text.append(5, 'I');
+	//cout << text << endl;
+
+
+
+	//text.push_back('n');
+	//cout << text << endl;
+	//// 
+	//// 
+	//text.pop_back();
+	//cout << text << endl;
+
+
+
+
+
+
+	//string text = "Hi ";
+	//text.assign("Tural"); // =
+	//cout << text << endl;
+
+	//string text = "message";
+	//cout << "Index : " << text.find('o') << endl;
+	//cout << "Index : " << text.rfind('s') << endl;
+
+
+
+
+
+	//string n = "Vasif";
+	//cout << n.c_str() << endl;
+	//cout << n.data() << endl;
+
+
+
+
+
+
+
+	// string n = "123";
+	// 
+	// int number = stoi(n);
+	// cout << number << endl;
+
+
+	 //int number = 123;
+	 //string n = to_string(number);
+	 //cout << n << endl;
+	 //cout << n[0] << endl;
+
+
+
+
+	 //string name = "Eminem";
+
+	 //cout << name << endl;
+
+
+
+
+	//string name1 = "Leyla";
+	//string name2 = "Isa";
+
+	//name1.swap(name2);
+
+	//cout << name1 << endl;
+	//cout << name2 << endl;
+
+
+
+
+
+	//string name = "Eminem";
+	//string subString = name.substr(1, 100);
+	//cout << subString << endl;
+
+
+
+
+
+	string name;
+	cout << "Enter name: ";
+	cin >> name;
+	cout << name << endl;
+
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+
+	string fullname;
+	cout << "Enter fullname: ";
+	getline(cin, fullname);
+	cout << fullname << endl;
 
 }
