@@ -15,7 +15,7 @@ public:
 template<typename T, int size>
 class A<T, T*, size> {
 public:
-	A() { cout << "partial specialization where T2 is a pointer" << endl; }
+	A() { cout << "partial specialization where second T is a pointer" << endl; }
 };
 
 
@@ -29,7 +29,7 @@ public:
 template<typename T1, typename T2, int size>
 class A<T1, T2*, size> {
 public:
-	A() { cout << "partial specialization where T2 is a pointer and Different type...\n"; }
+	A() { cout << "partial specialization where T2 is a pointer and different type...\n"; }
 };
 
 

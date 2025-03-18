@@ -16,10 +16,10 @@ using namespace std;
 
 
 void main() {
-	mainFunction();
-	// mainClass();
+	//mainFunction();
+	//mainClass();
 	// mainSpecial();
-	// mainNonType();
-	// mainMethodOutside();
-	// mainPartialSpecial();
+	//mainNonType();
+	//mainMethodOutside();
+	mainPartialSpecial();
 }
